@@ -32,7 +32,9 @@ app.get("/home", (req, res) => {
 });
 
 // NEW ROUTE
-
+app.get('/home/new', (req, res) => {
+  res.render('new.ejs');
+});
 
 // DELETE ROUTE
 
