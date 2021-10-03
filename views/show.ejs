@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Show Page></title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="/home"> Back to the Home Page</a>
+      <a href="/home"> Back to the Home Page</a>
     </nav>
     <h1><%=post.title %></h1>
     Written By: <%=post.author %><br />
-    <img src="<%= post.img%>" alt=""><br />
-    <p>
-        <%=post.contentText %>
-    </p>
-
-</body>
+    <img src="<%= post.img%>" alt="" /><br />
+    
+    <p><%=post.contentText %></p>
+    <a href="/home/<%=post._id %>/edit">Edit Post</a>
+    <form action="/home/<%= post.id %>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Post" />
+    </form>
+  </body>
 </html>

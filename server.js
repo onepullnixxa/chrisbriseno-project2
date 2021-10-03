@@ -48,7 +48,12 @@ app.delete('/home/:id', (req, res) => {
 });
 
 // UPDATE ROUTE
-
+app.put('/home/:id', (req, res) => {
+  Post.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  }, (error, updatedPost) =>
+    res.redirect(`/home/${req.params.id}`));
+});
 
 // CREATE ROUTE
 app.post('/home', (req, res) => {
@@ -58,7 +63,13 @@ app.post('/home', (req, res) => {
 });
 
 // EDIT ROUTE
-
+app.get('/home/:id/edit', (req, res) => {
+  Post.findById(req.params.id, (error, foundPost) => {
+    res.render('edit.ejs', {
+      post: foundPost
+    });
+  });
+});
 
 // SHOW ROUTE
 app.get('/home/:id', (req, res) => {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Edit Page</title>
+</head>
+<body>
+    <h1>Edit Post</h1>
+    <form action="/home/<%=post._id%>?_method=PUT" method="POST">
+        Title: <input type="text" name="title" value="<%=post.title%>" /><br />
+        Author: <input type="text" name="author" value="<%=post.author%>" /><br />
+        Image: <input type="url image" name="img" value="<%=post.img%>" /><br />
+        Text: <textarea id="content" type="text" name="contentText" /></textarea><br />
+        <input type="submit" value="Sumbit Changes" />
+    </form>
+    
+</body>
+</html>
