@@ -1,9 +1,9 @@
 // DEPENDENCIES
-require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const app = express();
+require("dotenv").config();
 
 const Post = require('./models/posts.js');
 
@@ -28,7 +28,11 @@ db.on("disconnected", () => console.log("mongob disconnected"));
 
 // INDEX ROUTE
 app.get("/home", (req, res) => {
-  res.send("Hello World!");
+  Post.find({}, (error, allPosts) => {
+    res.render('index.ejs', {
+      posts: allPosts,
+    });
+  });
 });
 
 // NEW ROUTE
@@ -45,7 +49,7 @@ app.get('/home/new', (req, res) => {
 // CREATE ROUTE
 app.post('/home', (req, res) => {
   Post.create(req.body, (error, createdPost) => {
-    res.send(createdPost);
+    res.redirect('/home');
   });
 });
 
@@ -53,6 +57,14 @@ app.post('/home', (req, res) => {
 
 
 // SHOW ROUTE
+app.get('/home/:id', (req, res) => {
+  Post.findById(req.params.id, (err, foundPost) => {
+    res.render('show.ejs', {
+      post: foundPost,
+    });
+  });
+});
+
 
 // LISTENER
 const PORT = process.env.PORT || 3000;
