@@ -5,7 +5,7 @@ const methodOverride = require("method-override");
 const app = express();
 require("dotenv").config();
 
-const Post = require('./models/posts.js');
+
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
@@ -26,60 +26,9 @@ db.on("error", (err) => console.log(err.message + " is mongod not running?"));
 db.on("connected", () => console.log("mongodb connected: "));
 db.on("disconnected", () => console.log("mongob disconnected"));
 
-// INDEX ROUTE
-app.get("/home", (req, res) => {
-  Post.find({}, (error, allPosts) => {
-    res.render('index.ejs', {
-      posts: allPosts,
-    });
-  });
-});
-
-// NEW ROUTE
-app.get('/home/new', (req, res) => {
-  res.render('new.ejs');
-});
-
-// DELETE ROUTE
-app.delete('/home/:id', (req, res) => {
-  Post.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('/home');
-  });
-});
-
-// UPDATE ROUTE
-app.put('/home/:id', (req, res) => {
-  Post.findByIdAndUpdate(req.params.id, req.body, {
-    new: true
-  }, (error, updatedPost) =>
-    res.redirect(`/home/${req.params.id}`));
-});
-
-// CREATE ROUTE
-app.post('/home', (req, res) => {
-  Post.create(req.body, (error, createdPost) => {
-    res.redirect('/home');
-  });
-});
-
-// EDIT ROUTE
-app.get('/home/:id/edit', (req, res) => {
-  Post.findById(req.params.id, (error, foundPost) => {
-    res.render('edit.ejs', {
-      post: foundPost
-    });
-  });
-});
-
-// SHOW ROUTE
-app.get('/home/:id', (req, res) => {
-  Post.findById(req.params.id, (err, foundPost) => {
-    res.render('show.ejs', {
-      post: foundPost,
-    });
-  });
-});
-
+// ROUTES + CONTROLLERS
+const PostsController = require("./controllers/postroute.js");
+app.use('/home', PostsController);
 
 // LISTENER
 const PORT = process.env.PORT || 3000;
