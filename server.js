@@ -41,7 +41,11 @@ app.get('/home/new', (req, res) => {
 });
 
 // DELETE ROUTE
-
+app.delete('/home/:id', (req, res) => {
+  Post.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/home');
+  });
+});
 
 // UPDATE ROUTE
 
