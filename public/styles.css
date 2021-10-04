@@ -1,0 +1,30 @@
+/* GENERAL STYLING */
+
+
+
+/* HEADER */
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 72px;
+    text-align: center;
+}
+
+header h5 {
+    display: inline;
+    margin-left: 10px;
+    
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-family: 'Baskervville', serif;
+    box-sizing: border-box;
+    background: #d3cdcd;
+    border-radius: 15px;
+    width: 80%;
+    padding: 1em 3em;
+
+}
