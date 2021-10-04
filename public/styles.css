@@ -1,5 +1,8 @@
 /* GENERAL STYLING */
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 /* HEADER */
@@ -26,5 +29,9 @@ header ul {
     border-radius: 15px;
     width: 80%;
     padding: 1em 3em;
+}
 
+#top-header {
+    text-align: right;
+    margin-right: 20px;
 }

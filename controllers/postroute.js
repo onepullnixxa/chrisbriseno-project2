@@ -16,6 +16,10 @@ postRouter.get("/", (req, res) => {
     res.render('new.ejs');
   });
   
+  postRouter.get('/about', (req, res) => {
+    res.render('about.ejs');
+  });
+
   // DELETE ROUTE
   postRouter.delete('/:id', (req, res) => {
     Post.findByIdAndRemove(req.params.id, (err, data) => {
