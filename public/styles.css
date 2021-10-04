@@ -8,8 +8,9 @@ a {
 /* HEADER */
 header h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 72px;
+    font-size: 75px;
     text-align: center;
+    margin: 25px;
 }
 
 header h5 {
@@ -25,10 +26,15 @@ header ul {
     list-style-type: none;
     font-family: 'Baskervville', serif;
     box-sizing: border-box;
-    background: #d3cdcd;
+    background: #e4e2e2;
     border-radius: 15px;
-    width: 80%;
-    padding: 1em 3em;
+    max-width: 1100px;
+    margin: auto;
+    padding: .5em .5em;
+}
+
+.border-area {
+    text-align: center;
 }
 
 #top-header {
