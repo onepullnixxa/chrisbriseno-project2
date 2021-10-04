@@ -15,8 +15,7 @@ header h1 {
 
 header h5 {
     display: inline;
-    margin-left: 10px;
-    
+    margin-left: 10px;   
 }
 
 header ul {
@@ -41,3 +40,4 @@ header ul {
     text-align: right;
     margin-right: 20px;
 }
+
