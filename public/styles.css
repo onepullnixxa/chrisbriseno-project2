@@ -15,7 +15,7 @@ header h1 {
 
 header h5 {
     display: inline;
-    margin-left: 10px;   
+    margin-left: 10px;
 }
 
 header ul {
@@ -36,8 +36,18 @@ header ul {
     text-align: center;
 }
 
-#top-header {
+#sign-in {
     text-align: right;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
+#create-button {
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    box-sizing: border-box;
+    background: #e4e2e2;
+    border-radius: 15px;
+    max-width: 150px;
+    padding: .3em .3em;
+    margin-left: 5px;
+}

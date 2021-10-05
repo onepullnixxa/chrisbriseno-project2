@@ -6,11 +6,65 @@
   <body>
     <%- include('./partials/header.ejs')%>
 
-    <h1><%=post.title %></h1>
-    Written By: <%=post.author %><br />
-    <img src="<%= post.img%>" alt="" /><br />
-    
-    <p><%=post.contentText %></p>
+    <style type="text/css">
+      .parent {
+        height: 80%;
+        width: 100%;
+        padding: 1em;
+        position: relative;
+      }
+
+      .child {
+        top: 80px;
+        bottom: 0px;
+        left: 100px;
+        right: 0px;
+        position: absolute;
+      }
+
+      p {
+        text-align: left;
+        margin-left: 1050px;
+        padding-right: 150px;
+      }
+
+      #post-title {
+        font-family: "Baskerville", serif;
+        font-size: xx-large;
+        margin-top: 75px;
+        margin-bottom: 0px;
+      }
+
+      #post-author {
+        font-family: "Baskerville", serif;
+        font-size: x-large;
+      }
+
+      #content-text {
+        font-family: "Lora", serif;
+        font-size: medium;
+        margin-top: 40px; 
+        word-spacing: 2px;     
+      }
+
+      #image {
+        width: 800px;
+        height: 650px;
+        object-fit: cover;
+        
+      }
+    </style>
+
+    <div class="parent">
+      <p id="post-title"><%=post.title %></p>
+      <p id="post-author">Written By: <%=post.author %></p>
+      <p id="content-text"><%=post.contentText %></p>
+      <div class="child" id="image">
+        <img id="image" src="<%= post.img%>" alt="" />
+      </div>
+    </div>
+
+
     <a href="/home/<%=post._id %>/edit">Edit Post</a>
     <form action="/home/<%= post.id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete Post" />
