@@ -10,7 +10,7 @@ header h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 75px;
     text-align: center;
-    margin: 25px;
+    margin: 10px 0px 25px 0px;
 }
 
 header h5 {
@@ -50,4 +50,40 @@ header ul {
     max-width: 150px;
     padding: .3em .3em;
     margin-left: 5px;
+}
+
+/*   INDEX PAGE */
+.post-scroll{
+    text-align: center;
+    list-style-type: none;
+}
+
+#index-images {
+    border-radius: 25px;
+    width: 850px;
+    height: 275px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+
+/*   EDIT PAGE  */
+#edit-title{
+    font-family: "Baskervville", serif;
+    font-size: xx-large;
+}
+
+.field-list {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0 4px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: normal;
+    box-sizing: border-box;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }

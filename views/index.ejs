@@ -8,28 +8,34 @@
       <div class="top-header" id="sign-in">
         <h5><a href="">Cart</a></h5>
         <h5><a href="">Sign In</a></h5>
-      </div>
-      <div class="top-header" id="create-button">
-        <a href="/home/new">Create a New Post</a>
+        <div class="top-header" id="create-button">
+          <a href="/home/new">Create a New Post</a>
+        </div>
       </div>
       <div class="main-header">
         <h1><a href="/home">BALL IS BEING</a></h1>
         <div class="border-area">
           <ul>
             <li><a href="/home/shop">SHOP</a></li>
-            <li><a href="https://soundcloud.com/christopherbriseno">MIXES</a></li>
+            <li>
+              <a href="https://soundcloud.com/christopherbriseno">MIXES</a>
+            </li>
             <li><a href="">CONNECT</a></li>
             <li><a href="/home/about">ABOUT</a></li>
           </ul>
         </div>
       </div>
     </header>
-    
+
     <ul>
       <% posts.forEach(post => { %>
-      <li>
-        <a href="/home/<%=post._id; %>"> <%=post.title; %> </a>
-      </li>
+      <div class="post-scroll">
+        <li>
+          <a href="/home/<%=post._id; %>">
+            <img id="index-images" src="<%= post.img%>" alt=""/>
+          </a>
+        </li>
+      </div>
       <% }) %>
     </ul>
   </body>

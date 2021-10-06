@@ -24,34 +24,41 @@
 
       p {
         text-align: left;
-        margin-left: 1050px;
+        margin-left: 1025px;
         padding-right: 150px;
       }
 
       #post-title {
-        font-family: "Baskerville", serif;
+        font-family: "Baskervville", serif;
         font-size: xx-large;
         margin-top: 75px;
         margin-bottom: 0px;
       }
 
       #post-author {
-        font-family: "Baskerville", serif;
+        font-family: "Baskervville", serif;
         font-size: x-large;
       }
 
       #content-text {
         font-family: "Lora", serif;
         font-size: medium;
-        margin-top: 40px; 
-        word-spacing: 2px;     
+        margin-top: 40px;
+        word-spacing: 2px;
       }
 
       #image {
         width: 800px;
         height: 650px;
-        object-fit: cover;
-        
+        object-fit: contain;
+      }
+
+      .buttons {
+        font-family: "Baskervville", serif;
+        position: absolute;
+        top: 775px;
+        bottom: 0px;
+        left: 1550px;
       }
     </style>
 
@@ -59,15 +66,21 @@
       <p id="post-title"><%=post.title %></p>
       <p id="post-author">Written By: <%=post.author %></p>
       <p id="content-text"><%=post.contentText %></p>
+
       <div class="child" id="image">
         <img id="image" src="<%= post.img%>" alt="" />
       </div>
+
+      <div class="buttons">
+        <a href="/home/<%=post._id %>/edit">Edit Post</a>
+        <form
+          style="display: inline; margin-left: 20px"
+          action="/home/<%= post.id %>?_method=DELETE"
+          method="POST"
+        >
+          <input type="submit" value="Delete Post" />
+        </form>
+      </div>
     </div>
-
-
-    <a href="/home/<%=post._id %>/edit">Edit Post</a>
-    <form action="/home/<%= post.id %>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete Post" />
-    </form>
   </body>
 </html>
