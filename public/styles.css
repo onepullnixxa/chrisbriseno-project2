@@ -46,7 +46,7 @@ header ul {
     text-align: center;
     box-sizing: border-box;
     background: #e4e2e2;
-    border-radius: 15px;
+    border-radius: 5px;
     max-width: 150px;
     padding: .3em .3em;
     margin-left: 5px;
@@ -160,8 +160,4 @@ label {
 .new-field-list input {
     margin: 10px;
     height: 20px;
-}
-
-.new-field-list textarea {
-    font-family: "Baskervville", serif;
 }
