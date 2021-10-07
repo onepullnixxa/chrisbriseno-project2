@@ -3,19 +3,42 @@
 <head>
     <%- include('./partials/head.ejs')%>
 </head>
+<div class="edit-parent">
 <body>
     <%- include('./partials/header.ejs')%>
+
+    <style type="text/css">
+        input[type="submit"] {
+            position: absolute;
+            left: 337px;
+            font-family: "Baskervville", serif;
+        }
+    
+    </style>
 
     <p id="edit-title">Edit Post</p>
     <div class="field-list">
     <form action="/home/<%=post._id%>?_method=PUT" method="POST">
-        Title: <input type="text" name="title" value="<%=post.title%>" /><br />
-        Author: <input type="text" name="author" value="<%=post.author%>" /><br />
-        Image: <input type="url image" name="img" value="<%=post.img%>" /><br />
+        <label for="title">
+            Title:
+            <input type="text" id="title-form" name="title" value="<%=post.title%>"/><br/>   
+        <label>
+        <label for="author">
+            Author:
+            <input type="text" id="author-form" name="author" value="<%=post.author%>"/><br />
+        </label>
+        <label for="image">
+            Image:
+            <input type="url image" id="image-form" name="img" value="<%=post.img%>"/><br />
+        </label>
+        
         Text: <textarea id="content" type="text" name="contentText" /></textarea><br />
-        <input type="submit" value="Sumbit Changes" />
+
+
+        <input type="submit" value="Submit Changes" />
     </form>
     </div>
     
 </body>
+</div>
 </html>

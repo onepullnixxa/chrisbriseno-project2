@@ -3,15 +3,44 @@
 	<head>
 		<%- include('./partials/head.ejs')%>
 	</head>
+
+	<div class="new-parent">
 	<body>
 		<%- include('./partials/header.ejs')%>
-		<h1>Create a New Post</h1>
+
+		<style type="text/css">
+			input[type="submit"] {
+				position: absolute;
+				left: 337px;
+				font-family: "Baskervville", serif;
+			}
+		
+		</style>
+
+		<p id="new-title">Create a New Post</p>
+		<div class="new-field-list">
 		<form action="/home" method="POST">
-			Title: <input type="text" name="title" /><br />
-			Author: <input type="text" name="author" /><br />
-			Image: <input type="url image" name="img" /><br />
+			<label for="title">
+				Title:
+				<input type="text" id="title-form" name="title"/><br />
+			</label>
+			<label for="author">
+				Author:
+				<input type="text" id="author-form" name="author"/><br />
+			</label>
+			<label for="image">
+				Image:
+				<input type="url image" id="image-form" name="img"/><br />
+			</label>
+
+			<label for="text-area">
             Text: <textarea id="content" type="text" name="contentText" /></textarea><br />
+			</label>
+
 			<input type="submit" name="" value="Submit New Post" />
 		</form>
+		</div>
 	</body>
+	</div>
 </html>
+

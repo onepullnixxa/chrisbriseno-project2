@@ -68,22 +68,100 @@ header ul {
 
 
 /*   EDIT PAGE  */
+.edit-parent{
+    position: relative;
+}
+
 #edit-title{
     font-family: "Baskervville", serif;
     font-size: xx-large;
+    position: absolute;
+    top: 250px;
+    left: 615px;
 }
 
 .field-list {
-    width: 100%;
-    padding: 12px;
-    margin: 6px 0 4px;
+    width: 28%;
+    height: 375px;
+    padding: 25px;
     border: 1px solid #ccc;
     background: #fafafa;
     color: #000;
-    font-family: sans-serif;
-    font-size: 12px;
     line-height: normal;
     box-sizing: border-box;
-    -moz-border-radius: 2px;
     border-radius: 2px;
+    position: absolute;
+    top: 275px;
+    left: 825px;
+
+}
+
+.field-list input {
+    margin: 10px;
+    height: 20px;
+}
+
+#title-form {
+    width: 375px;
+}
+
+#author-form {
+    width: 358px;
+}
+
+#image-form {
+    width: 365px;
+}
+
+textarea {
+    width: 388px;
+    height: 150px;
+    max-width: 388px;
+    min-width: 388px;
+    max-height: 155px;
+    min-height: 150px;
+    margin-top: 8px;
+}
+
+label {
+    font-family: "Baskervville", serif;
+    font-size: medium;
+    display: block;
+}
+
+/*   NEW PAGE   */
+.new-parent{
+    position: relative;
+}
+
+#new-title {
+    font-family: "Baskervville", serif;
+    font-size: xx-large;
+    position: absolute;
+    top: 250px;
+    left: 540px;
+}
+
+.new-field-list {
+    width: 28%;
+    height: 375px;
+    padding: 25px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    color: #000;
+    line-height: normal;
+    box-sizing: border-box;
+    border-radius: 2px;
+    position: absolute;
+    top: 275px;
+    left: 850px;
+}
+
+.new-field-list input {
+    margin: 10px;
+    height: 20px;
+}
+
+.new-field-list textarea {
+    font-family: "Baskervville", serif;
 }
