@@ -28,6 +28,7 @@ postRouter.get("/", (req, res) => {
     res.render('connect.ejs');
   });
 
+
   // DELETE ROUTE
   postRouter.delete('/:id', (req, res) => {
     Post.findByIdAndRemove(req.params.id, (err, data) => {

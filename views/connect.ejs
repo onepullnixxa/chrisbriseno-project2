@@ -3,23 +3,46 @@
   <head>
     <%- include('./partials/head.ejs')%>
   </head>
+  <div class="connect-parent">
   <body>
-
-    <%- include('./partials/header.ejs')%>
+  <%- include('./partials/header.ejs')%>
 
     <style type="text/css">
-      body {
-        text-align: center;
-        font-family: "Lora", serif;
+      .connect-parent{
+        position: relative;
       }
 
       p {
-        margin-top: 50px;
+        font-family: "Lora", serif;
+      }
+
+      .page-text {
+        position: absolute;
+        top: 250px;
+        left: 635px;
+        text-align: left;
+        padding-right: 950px;
+        word-spacing: 2px;
+      }
+
+      .contacts {
+        position: absolute;
+        top: 250px;
+        left: 1000px;
+        font-size: 14px;
       }
     </style>
+    <div class="page-text">
+      <p>If you're interested in contributing content to  Ball Is Being, please contact Christopher Briseño at the following contacts:</p>
+    </div>
+    <div class="contacts">
+      <p>Email: ballisbeing@gmail.com</p>
+      <p>IG: @ball_is_being</p>
+      <p>Soundcloud: soundcloud.com/ballisbeing</p>
+    </div>
 
-    <p>If you'd like to be involved with Ball Is Being, please contact Christopher Briseño at the following contacts:</p>
 
 
 </body>
+</div>
 </html>

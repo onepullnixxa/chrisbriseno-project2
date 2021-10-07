@@ -28,3 +28,4 @@ Description: Example of the schema used in this project.
 - The ability to sign in and use authentication
 - A functional shop that will allow user to add items to cart.
 - Additional CSS animations on the index page (i.e. hover animations for each post).
+- Styling the page for mobile use.
