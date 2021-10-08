@@ -22,19 +22,19 @@
 		<form action="/home" method="POST">
 			<label for="title">
 				Title:
-				<input type="text" id="title-form" name="title"/><br />
+				<input type="text" id="title-form" name="title" required/><br />
 			</label>
 			<label for="author">
 				Author:
-				<input type="text" id="author-form" name="author"/><br />
+				<input type="text" id="author-form" name="author" required/><br />
 			</label>
 			<label for="image">
 				Image:
-				<input type="url image" id="image-form" name="img"/><br />
+				<input type="url image" id="image-form" name="img" required/><br />
 			</label>
 
 			<label for="text-area">
-            Text: <textarea id="content" type="text" name="contentText" /></textarea><br />
+            Text: <textarea id="content" type="text" name="contentText" required/></textarea><br />
 			</label>
 
 			<input type="submit" name="" value="Submit New Post" />
